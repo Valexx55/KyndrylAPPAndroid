@@ -1,30 +1,21 @@
-package edu.basic.kyndrylapp
+package edu.basic.kyndrylapp.activity
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import edu.basic.kyndrylapp.activity.ImcActivity
+import edu.basic.kyndrylapp.R
 
-class MainActivity : AppCompatActivity() {
-
-
+class ImcActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_imc)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        Log.d(Constantes.ETIQUETA_LOG, "en Oncreate de Main Activity")
-        val intent = Intent(this, ImcActivity::class.java)
-        //lanzo
-        this.startActivity(intent)//intent EXPLÍCITO
-
     }
 }

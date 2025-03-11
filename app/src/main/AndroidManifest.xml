@@ -13,29 +13,29 @@
         android:theme="@style/Theme.KyndrylAPP"
         tools:targetApi="31">
         <activity
+            android:name=".activity.ImcActivity"
+            android:label="IMC Activity"
+            android:exported="false" />
+        <activity
             android:name=".activity.Advina"
-            android:label="Juego Adivina"
-            android:exported="true">
-            <intent-filter>
+            android:exported="true"
+            android:label="Juego Adivina">
 
-                <!-- esto indica al Siste Android que mi app arranca en esta ventana -->
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="Inicio">
-            <!--
+
+
             <intent-filter>
 
 
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
+
         </activity>
     </application>
 

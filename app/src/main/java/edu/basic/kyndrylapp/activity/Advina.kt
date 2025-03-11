@@ -72,7 +72,9 @@ class Advina : AppCompatActivity() {
         this.numeroRandom = (0..100).random()
         Log.d(Constantes.ETIQUETA_LOG, "El número secreto es ${this.numeroRandom} ")
         this.cajaNumeroUsuario = findViewById(R.id.numeroUsuario)
-        //this.cajaNumeroUsuario.text=" "
+        this.cajaNumeroUsuario.setText(" ")
+
+
 
     }
 
