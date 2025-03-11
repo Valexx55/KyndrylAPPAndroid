@@ -21,7 +21,7 @@
 
     <EditText
         android:id="@+id/numeroUsuario"
-        android:text="500"
+        android:hint="intro num"
         android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -42,4 +42,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/numeroUsuario" />
+
+    <Button
+        android:id="@+id/button2"
+        android:visibility="invisible"
+        android:onClick="reiniciarPartida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="REINICIAR"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

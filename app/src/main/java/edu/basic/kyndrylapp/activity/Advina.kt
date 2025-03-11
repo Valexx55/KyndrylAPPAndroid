@@ -3,6 +3,7 @@ package edu.basic.kyndrylapp.activity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -19,6 +20,9 @@ import edu.basic.kyndrylapp.R
  *
  * si acierta antes de los 5 intentos, le damos la enhorabuena
  * y si no, si pierde todas las vidas, le damos el pésame y le informamos del número buscado
+ *
+ * Ahora queremos, que cuando acabe la partida, darle la opción de jugar una nueva
+ * REINICIAR!
  */
 class Advina : AppCompatActivity() {
 
@@ -26,35 +30,88 @@ class Advina : AppCompatActivity() {
     var numeroIntentos:Int = 5
     var numeroRandom:Int = 0
     lateinit var cajaNumeroUsuario:EditText //declaro la caja del numero a la que tendré que acceder más tarde, pero como no se ha ejecutado el oncreate y no está definida, le pongo el lateinit
+    lateinit var botonPrueba:Button //= findViewById(R.id.button)
+    lateinit var botonReinicio:Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_advina)
+        setContentView(R.layout.activity_advina) //HASTA QUE NO SE EJECUTA ESTE MÉTODO, LAS VISTAS NO EXISTEN
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        this.numeroRandom = (0..100).random()
+        Log.d(Constantes.ETIQUETA_LOG, "El número secreto es ${this.numeroRandom} ")
+        this.cajaNumeroUsuario = findViewById(R.id.numeroUsuario)
+        //this.cajaNumeroUsuario.text=" "
+
+    }
+
+    fun finPartida ():Unit //que la función no devuelve nada, el VOID de JAVA
+    {
+        this.botonPrueba = findViewById(R.id.button)
+        this.botonPrueba.isClickable = false//desactivamos el botón
+        this.botonReinicio = findViewById(R.id.button2) //hacemos visible el botón de reinicio
+        this.botonReinicio.visibility = View.VISIBLE
     }
 
     fun pruebaNumero(view: View) {
+        var acierto =false
         Log.d(Constantes.ETIQUETA_LOG, "BOTÓN TOCADO")
         //acceder al Edit Text
         this.cajaNumeroUsuario = findViewById<EditText>(R.id.numeroUsuario)
-        var numeroUsuario = this.cajaNumeroUsuario.text.toString().toInt()
+        var numeroUsuarioTxt = this.cajaNumeroUsuario.text.toString();
+        val numeroUsuario = if (numeroUsuarioTxt=="")
+        {
+            0 //si la caja de texto está vacía, le damos el valor cero
+        } else {
+            numeroUsuarioTxt.toInt()
+        }
         Log.d(Constantes.ETIQUETA_LOG, "Numero de usuario = $numeroUsuario")
 
         this.numeroIntentos= this.numeroIntentos-1;
-        if (this.numeroIntentos>0)
+
+        if (this.numeroRandom<numeroUsuario)
         {
-            Log.d(Constantes.ETIQUETA_LOG, "QUEDAn ${this.numeroIntentos} intentos")
-        }else {
+            //hay que informar menor
+            Log.d(Constantes.ETIQUETA_LOG, "El número buscado es menor")
+            Toast.makeText(this, "El número buscado es menor", Toast.LENGTH_LONG).show()
+
+        } else if (this.numeroRandom>numeroUsuario)
+        {
+            //hay que informar mayor
+            Log.d(Constantes.ETIQUETA_LOG, "El número buscado es mayor")
+            Toast.makeText(this, "El número buscado es mayor", Toast.LENGTH_LONG).show()
+
+        } else {
+            //acierto
+            Log.d(Constantes.ETIQUETA_LOG, "ENHORABUENA, HAS ACERTADO")
+            Toast.makeText(this, "ENHORABUENA, HAS ACERTADO", Toast.LENGTH_LONG).show()
+            acierto = true
+            finPartida()
+        }
+
+        if (!acierto && this.numeroIntentos==0)
+        {
             Log.d(Constantes.ETIQUETA_LOG, "NO QUEDAN INTENTOS")
             var toast = Toast.makeText(this, "PERDISTE!!! El número secreto era ${this.numeroRandom}", Toast.LENGTH_LONG);
             toast.show()//muestra
+            finPartida()
+            //echarle del juego? // reiniciar
+            //this.finish()//cierra la actividad actual, si hubiera navegado desde otra pantalla, ser vería la anterior
+            //this.finishAffinity()//cierra la aplicación, cierra todo
+
         }
 
+    }
+
+    fun reiniciarPartida(view: View) {
+        Log.d(Constantes.ETIQUETA_LOG, "El usuario quiere volver a empezar")
+        this.recreate()
+        //this.finish()
+        //startActivity(intent)
     }
 }
