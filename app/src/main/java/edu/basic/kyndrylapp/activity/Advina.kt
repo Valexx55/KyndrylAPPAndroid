@@ -34,7 +34,33 @@ class Advina : AppCompatActivity() {
     lateinit var botonReinicio:Button
 
 
+    override fun onStart() {
+        Log.d(Constantes.ETIQUETA_LOG, "en onStart")
+        super.onStart()
+    }
+
+    override fun onPause() {
+        Log.d(Constantes.ETIQUETA_LOG, "en onPause")
+        super.onPause()
+    }
+
+    override fun onResume() {
+        Log.d(Constantes.ETIQUETA_LOG, "en onResume")
+        super.onResume()
+    }
+
+    override fun onStop() {
+        Log.d(Constantes.ETIQUETA_LOG, "en onStop")
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        Log.d(Constantes.ETIQUETA_LOG, "onDestroy()")
+        super.onDestroy()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        Log.d(Constantes.ETIQUETA_LOG, "onCreate()")
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_advina) //HASTA QUE NO SE EJECUTA ESTE MÉTODO, LAS VISTAS NO EXISTEN
