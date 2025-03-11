@@ -24,7 +24,7 @@ import edu.basic.kyndrylapp.R
  * Ahora queremos, que cuando acabe la partida, darle la opción de jugar una nueva
  * REINICIAR!
  */
-class Advina : AppCompatActivity() {
+class Adivina : AppCompatActivity() {
 
     //var usuario, numero intentos restantes, numero aleatorio
     var numeroIntentos:Int = 5
@@ -69,10 +69,18 @@ class Advina : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        this.numeroRandom = (0..100).random()
+        //TODO depuramos esto y vemos el Elvis operator
+        if (savedInstanceState!=null)
+        {
+            this.numeroRandom = savedInstanceState.getInt("NUM_SECRETO")
+            this.numeroIntentos = savedInstanceState.getInt("NUM_INTENTOS")
+        } else {
+            this.numeroRandom = (0..100).random()
+        }
+
         Log.d(Constantes.ETIQUETA_LOG, "El número secreto es ${this.numeroRandom} ")
         this.cajaNumeroUsuario = findViewById(R.id.numeroUsuario)
-        this.cajaNumeroUsuario.setText(" ") //pero para asignar un nuevo valor a la cajam con el operador de Java set
+        this.cajaNumeroUsuario.setText("") //pero para asignar un nuevo valor a la cajam con el operador de Java set
         //this.cajaNumeroUsuario.text = "" //por debajo hace el get cuando accedo a lapropiedad
 
 
@@ -143,5 +151,13 @@ class Advina : AppCompatActivity() {
         this.recreate()
         //this.finish()
         //startActivity(intent)
+    }
+
+    //ESTE MÉTODO, ES INVOCADO ANTES QUE LA ACTIVDAD SE DESTRUYA EN UN
+    //CAMBIO DE ORIENTACIÓN
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("NUM_SECRETO", this.numeroRandom)
+        outState.putInt("NUM_INTENTOS", this.numeroIntentos)
     }
 }
