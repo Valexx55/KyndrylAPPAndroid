@@ -72,7 +72,9 @@ class Advina : AppCompatActivity() {
         this.numeroRandom = (0..100).random()
         Log.d(Constantes.ETIQUETA_LOG, "El número secreto es ${this.numeroRandom} ")
         this.cajaNumeroUsuario = findViewById(R.id.numeroUsuario)
-        this.cajaNumeroUsuario.setText(" ")
+        this.cajaNumeroUsuario.setText(" ") //pero para asignar un nuevo valor a la cajam con el operador de Java set
+        //this.cajaNumeroUsuario.text = "" //por debajo hace el get cuando accedo a lapropiedad
+
 
 
 

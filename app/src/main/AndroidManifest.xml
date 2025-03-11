@@ -13,29 +13,25 @@
         android:theme="@style/Theme.KyndrylAPP"
         tools:targetApi="31">
         <activity
-            android:name=".activity.ImcActivity"
-            android:label="IMC Activity"
+            android:name=".activity.ResultadoImcActivty"
             android:exported="false" />
+        <activity
+            android:name=".activity.ImcActivity"
+            android:exported="false"
+            android:label="IMC Activity" />
         <activity
             android:name=".activity.Advina"
             android:exported="true"
-            android:label="Juego Adivina">
-
-        </activity>
+            android:label="Juego Adivina"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="Inicio">
-
-
             <intent-filter>
-
-
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
 

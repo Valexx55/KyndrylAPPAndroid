@@ -33,6 +33,10 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+    buildFeatures {
+        viewBinding = true //activamos el acceso a vistas automático
+    }
 }
 
 dependencies {
