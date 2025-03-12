@@ -62,13 +62,8 @@ class Adivina : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d(Constantes.ETIQUETA_LOG, "onCreate()")
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_advina) //HASTA QUE NO SE EJECUTA ESTE MÉTODO, LAS VISTAS NO EXISTEN
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+
         //TODO depuramos esto y vemos el Elvis operator
         //vamos a programar lo mismo, pero al estilo Kotlin
         //?. precediendo con el ?, accede a la propiedad o la función sólo si es != null
@@ -124,18 +119,21 @@ class Adivina : AppCompatActivity() {
         {
             //hay que informar menor
             Log.d(Constantes.ETIQUETA_LOG, "El número buscado es menor")
-            Toast.makeText(this, "El número buscado es menor", Toast.LENGTH_LONG).show()
+            val mensaje_menor = resources.getString(R.string.mensaje_menor)
+            Toast.makeText(this, mensaje_menor, Toast.LENGTH_LONG).show()
 
         } else if (this.numeroRandom>numeroUsuario)
         {
             //hay que informar mayor
             Log.d(Constantes.ETIQUETA_LOG, "El número buscado es mayor")
-            Toast.makeText(this, "El número buscado es mayor", Toast.LENGTH_LONG).show()
+            val mensaje_mayor = resources.getString(R.string.mensaje_mayor)
+            Toast.makeText(this, mensaje_mayor, Toast.LENGTH_LONG).show()
 
         } else {
             //acierto
             Log.d(Constantes.ETIQUETA_LOG, "ENHORABUENA, HAS ACERTADO")
-            Toast.makeText(this, "ENHORABUENA, HAS ACERTADO", Toast.LENGTH_LONG).show()
+            val mensaje_victoria = resources.getString(R.string.mensaje_victoria)
+            Toast.makeText(this, mensaje_victoria, Toast.LENGTH_LONG).show()
             acierto = true
             finPartida()
         }
@@ -143,7 +141,8 @@ class Adivina : AppCompatActivity() {
         if (!acierto && this.numeroIntentos==0)
         {
             Log.d(Constantes.ETIQUETA_LOG, "NO QUEDAN INTENTOS")
-            var toast = Toast.makeText(this, "PERDISTE!!! El número secreto era ${this.numeroRandom}", Toast.LENGTH_LONG);
+            val mensaje_derrota = resources.getString(R.string.mensaje_derrota, this.numeroRandom)
+            var toast = Toast.makeText(this, mensaje_derrota, Toast.LENGTH_LONG);
             toast.show()//muestra
             finPartida()
             //echarle del juego? // reiniciar
@@ -156,9 +155,9 @@ class Adivina : AppCompatActivity() {
 
     fun reiniciarPartida(view: View) {
         Log.d(Constantes.ETIQUETA_LOG, "El usuario quiere volver a empezar")
-        this.recreate()
-        //this.finish()
-        //startActivity(intent)
+        //this.recreate() //OJO que se llama onSaveInstanceState
+        this.finish()
+        startActivity(intent)
     }
 
     //ESTE MÉTODO, ES INVOCADO ANTES QUE LA ACTIVDAD SE DESTRUYA EN UN

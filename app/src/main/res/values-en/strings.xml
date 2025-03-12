@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kyndryl APP</string>
+    <string name="label_activity_adivina">Guess Game</string>
+    <string name="texto_adivina">TRY TO GUESS A NUMBER BETWEEN 0 AND 100</string>
+    <string name="hint_adivina">Enter a number</string>
+    <string name="boton_probar">TRY</string>
+    <string name="boton_reinicio">RESTART</string>
+    <string name="mensaje_mayor">The secret number is bigger</string>
+    <string name="mensaje_menor">The secret number is smaller</string>
+    <string name="mensaje_victoria">You WIN</string>
+    <string name="mensaje_derrota">You LOSE, the secret number was %1$d</string>
+</resources>

@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Kyndryl APP</string>
+    <string name="label_activity_adivina">Juego Adivina</string>
+    <string name="texto_adivina">INTENTA ADIVINAR UN NÚMERO ENTRE 1 Y 100</string>
+    <string name="hint_adivina">Intro num</string>
+    <string name="boton_probar">PROBAR SUERTE</string>
+    <string name="boton_reinicio">REINICIAR</string>
+    <string name="mensaje_mayor">El número buscado es mayor</string>
+    <string name="mensaje_menor">El número buscado es menor</string>
+    <string name="mensaje_victoria">HAS GANADO</string>
+    <string name="mensaje_derrota">HAS PERDIDO, EL NÚMERO BUSCADO ERA %1$d</string>
 </resources>

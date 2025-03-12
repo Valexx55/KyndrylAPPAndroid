@@ -15,14 +15,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
-        android:text="INTENTA ADIVINAR UN NÚMERO ENTRE 1 Y 100"
+        android:text="@string/texto_adivina"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/numeroUsuario"
-        android:hint="intro num"
+        android:hint="@string/hint_adivina"
         android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:onClick="pruebaNumero"
-        android:text="PROBAR SUERTE"
+        android:text="@string/boton_probar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/numeroUsuario" />
@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:onClick="reiniciarPartida"
-        android:text="REINICIAR"
+        android:text="@string/boton_reinicio"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
