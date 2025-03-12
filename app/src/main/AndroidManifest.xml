@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
-
-    <!--si mi app se conecta a internet, necesito declarar el permiso aquí-->
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <!--si quiero comprobar el estado de la red, necesito este permiso-->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- si mi app se conecta a internet, necesito declarar el permiso aquí -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- si quiero comprobar el estado de la red, necesito este permiso -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -16,13 +14,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KyndrylAPP"
-        tools:targetApi="31" >
+        tools:targetApi="31">
+        <activity
+            android:name=".activity.GaleriaPerrosActivity"
+            android:label="GALERÍA DE PERROS"
+            android:exported="false" />
         <activity
             android:name=".activity.PerrosActivity"
+            android:label="Búsqueda fotos caninas"
             android:exported="false" />
         <activity
             android:name=".activity.KyndrylWebActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -63,7 +66,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="Inicio" >
+            android:label="Inicio">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,5 +1,6 @@
 package edu.basic.kyndrylapp.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -47,7 +48,10 @@ class PerrosActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         if (RedUtil.hayInternet(this))
         {
             //hay internet, vamos a otra activty, donde mostramos los resultados
-            Toast.makeText(this, "SÍ HAY CONEXIÓN A INTERNET", Toast.LENGTH_LONG).show()
+            //Toast.makeText(this, "SÍ HAY CONEXIÓN A INTERNET", Toast.LENGTH_LONG).show()
+            val intent = Intent (this, GaleriaPerrosActivity::class.java)
+            intent.putExtra("RAZA", this.razaSeleecionada)
+            startActivity(intent)
         } else {
             Toast.makeText(this, "NO HAY CONEXIÓN A INTERNET", Toast.LENGTH_LONG).show()
         }
