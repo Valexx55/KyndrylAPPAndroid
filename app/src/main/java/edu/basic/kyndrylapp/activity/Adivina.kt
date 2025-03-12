@@ -70,13 +70,21 @@ class Adivina : AppCompatActivity() {
             insets
         }
         //TODO depuramos esto y vemos el Elvis operator
-        if (savedInstanceState!=null)
+        //vamos a programar lo mismo, pero al estilo Kotlin
+        //?. precediendo con el ?, accede a la propiedad o la función sólo si es != null
+        //?: Elvis operator, toma el valor en caso de que sea nulo (else)
+        this.numeroIntentos = savedInstanceState?.getInt("NUM_INTENTOS") ?: 5
+        this.numeroRandom = savedInstanceState?.getInt("NUM_SECRETO") ?: (0..100).random()
+        //ESTILO JAVA, COMPRBACIÓN DE NULOS
+        /*if (savedInstanceState!=null)
         {
+            //viene de girar el dispositivo
             this.numeroRandom = savedInstanceState.getInt("NUM_SECRETO")
             this.numeroIntentos = savedInstanceState.getInt("NUM_INTENTOS")
         } else {
+            //entra por primera vez
             this.numeroRandom = (0..100).random()
-        }
+        }*/
 
         Log.d(Constantes.ETIQUETA_LOG, "El número secreto es ${this.numeroRandom} ")
         this.cajaNumeroUsuario = findViewById(R.id.numeroUsuario)
