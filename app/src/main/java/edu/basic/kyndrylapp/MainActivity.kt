@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import edu.basic.kyndrylapp.activity.Adivina
 import edu.basic.kyndrylapp.activity.BusquedaActivity
+import edu.basic.kyndrylapp.activity.PerrosActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,7 +26,8 @@ class MainActivity : AppCompatActivity() {
         Log.d(Constantes.ETIQUETA_LOG, "en Oncreate de Main Activity")
         //val intent = Intent(this, ImcActivity::class.java)
         //val intent = Intent(this, Adivina::class.java)
-        val intent = Intent(this, BusquedaActivity::class.java)
+        //val intent = Intent(this, BusquedaActivity::class.java)
+        val intent = Intent(this, PerrosActivity::class.java)
         //lanzo
         this.startActivity(intent)//intent EXPLÍCITO
 
