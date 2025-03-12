@@ -13,9 +13,12 @@
         android:theme="@style/Theme.KyndrylAPP"
         tools:targetApi="31">
         <activity
+            android:name=".activity.BusquedaActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.ResultadoImcActivty"
             android:exported="false"
-            android:theme="@style/Theme.KyndrylAPPSinBarra"/>
+            android:theme="@style/Theme.KyndrylAPPSinBarra" />
         <activity
             android:name=".activity.ImcActivity"
             android:exported="false"
@@ -31,7 +34,7 @@
         <activity
             android:name=".activity.Adivina"
             android:exported="true"
-            android:label="@string/label_activity_adivina"></activity>
+            android:label="@string/label_activity_adivina" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
