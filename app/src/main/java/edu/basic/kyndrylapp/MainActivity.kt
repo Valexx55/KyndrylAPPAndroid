@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import edu.basic.kyndrylapp.activity.Adivina
 import edu.basic.kyndrylapp.activity.BusquedaActivity
 import edu.basic.kyndrylapp.activity.PerrosActivity
+import edu.basic.kyndrylapp.activity.ProductosActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,7 +28,8 @@ class MainActivity : AppCompatActivity() {
         //val intent = Intent(this, ImcActivity::class.java)
         //val intent = Intent(this, Adivina::class.java)
         //val intent = Intent(this, BusquedaActivity::class.java)
-        val intent = Intent(this, PerrosActivity::class.java)
+        //val intent = Intent(this, PerrosActivity::class.java)
+        val intent = Intent(this, ProductosActivity::class.java)
         //lanzo
         this.startActivity(intent)//intent EXPLÍCITO
 

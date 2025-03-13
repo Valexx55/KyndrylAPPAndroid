@@ -16,13 +16,16 @@
         android:theme="@style/Theme.KyndrylAPP"
         tools:targetApi="31">
         <activity
-            android:name=".activity.GaleriaPerrosActivity"
-            android:label="GALERÍA DE PERROS"
+            android:name=".activity.ProductosActivity"
             android:exported="false" />
         <activity
+            android:name=".activity.GaleriaPerrosActivity"
+            android:exported="false"
+            android:label="GALERÍA DE PERROS" />
+        <activity
             android:name=".activity.PerrosActivity"
-            android:label="Búsqueda fotos caninas"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Búsqueda fotos caninas" />
         <activity
             android:name=".activity.KyndrylWebActivity"
             android:exported="true">
