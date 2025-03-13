@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
+import androidx.viewpager2.widget.ViewPager2
 import edu.basic.kyndrylapp.Constantes
 import edu.basic.kyndrylapp.R
 import kotlinx.coroutines.launch
@@ -49,6 +50,13 @@ class GaleriaPerrosActivity : AppCompatActivity() {
             listadoPerros.message.forEach{ fotoperro ->
                 Log.d(Constantes.ETIQUETA_LOG, "FOTO perro = $fotoperro")
             }
+            //TODO mostrar la galería de perros FRAGMENTS
+            //creo el adapter
+            var adapterFragmentPerros = AdapterFragmentPerros(this@GaleriaPerrosActivity)
+            adapterFragmentPerros.listadoPerros = listadoPerros
+            //lo asocio al viewpager
+            var viewPager = this@GaleriaPerrosActivity.findViewById<ViewPager2>(R.id.viewPager)
+            viewPager.adapter = adapterFragmentPerros
         }
         Log.d(Constantes.ETIQUETA_LOG, "Petición realizada")//UI hilo principal
 
