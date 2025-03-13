@@ -10,15 +10,20 @@ import androidx.lifecycle.lifecycleScope
 import edu.basic.kyndrylapp.Constantes
 import edu.basic.kyndrylapp.ProductoService
 import edu.basic.kyndrylapp.R
+import edu.basic.kyndrylapp.databinding.ActivityProductosBinding
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class ProductosActivity : AppCompatActivity() {
+    lateinit var binding: ActivityProductosBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityProductosBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_productos)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -47,7 +52,7 @@ class ProductosActivity : AppCompatActivity() {
             }
         }
 
-
+       // binding.listaReciclada.adapter
     }
 
         //5 REPRESENTAR LA LISTA POR PANTALL

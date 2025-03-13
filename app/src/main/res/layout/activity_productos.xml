@@ -7,4 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".activity.ProductosActivity">
 
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listaReciclada"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="128dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
