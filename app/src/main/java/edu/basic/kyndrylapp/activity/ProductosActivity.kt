@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import edu.basic.kyndrylapp.Constantes
 import edu.basic.kyndrylapp.ProductoService
 import edu.basic.kyndrylapp.R
@@ -50,9 +52,14 @@ class ProductosActivity : AppCompatActivity() {
                 //it variable predefinida que representa al producto en curso
                 Log.d(Constantes.ETIQUETA_LOG, "Producto = ${it.toString()}")
             }
+            binding.listaReciclada.adapter = AdapterProductos(listaProductos)//
+            //hablamos del estilo de la vista (filas, columnas o celdas)
+            var layoutLista = LinearLayoutManager(this@ProductosActivity, RecyclerView.VERTICAL, false)
+            binding.listaReciclada.layoutManager = layoutLista
         }
 
-       // binding.listaReciclada.adapter
+        //var layoutLista = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
+
     }
 
         //5 REPRESENTAR LA LISTA POR PANTALL
