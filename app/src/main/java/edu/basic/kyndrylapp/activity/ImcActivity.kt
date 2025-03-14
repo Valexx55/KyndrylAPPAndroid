@@ -1,10 +1,14 @@
 package edu.basic.kyndrylapp.activity
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -30,6 +34,47 @@ class ImcActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+    }
+
+    //dibujar el menú
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_imc, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    private fun salir() {
+        //mostrar un diálogo típico de estás seguro??=
+
+        var alertDialog = AlertDialog.Builder(this)
+            .setTitle("SALIR")
+            .setMessage("¿Desea salir?")
+            .setNegativeButton("NO"){ dialog: DialogInterface, opcion:Int ->
+                dialog.cancel()
+            }
+            .setPositiveButton("SÍ"){ dialog:DialogInterface, opcion:Int ->
+                this.finish()
+
+            }.create()
+
+        alertDialog.show()
+
+    }
+
+    //escuchar las acciones de menú
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId)
+        {
+            R.id.opcionLimpiar -> {
+                binding.etpeso.setText("")
+                binding.etAltura.setText("")
+            }
+
+            R.id.opcionSalir -> {
+                salir()
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
     fun calcularImc(view: View) {
