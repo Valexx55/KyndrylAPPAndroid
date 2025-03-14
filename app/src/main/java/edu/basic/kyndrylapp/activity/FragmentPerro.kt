@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.squareup.picasso.Picasso
 import edu.basic.kyndrylapp.R
@@ -21,7 +22,11 @@ class FragmentPerro: Fragment() {
 
         var itemCarrusel: View? = inflater.inflate(R.layout.fragment_perro, container, false)
         var url_foto =  arguments?.getString("URL_FOTO") ?: ""
+        var textoLeyenda = arguments?.getString("TEXTO_LEYENDA") ?: ""
         var imagenPerro = itemCarrusel?.findViewById<ImageView>(R.id.fotoPerro)
+        var textViewLeyenda = itemCarrusel?.findViewById<TextView>(R.id.leyendaFoto)
+        textViewLeyenda!!.setText(textoLeyenda)
+
 
         Picasso.get().load(url_foto).into(imagenPerro)
 

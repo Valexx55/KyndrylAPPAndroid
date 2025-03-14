@@ -2,6 +2,7 @@ package edu.basic.kyndrylapp.activity
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -29,6 +30,8 @@ class GaleriaPerrosActivity : AppCompatActivity() {
         }
         val razaPerro =  intent.getStringExtra("RAZA") ?: ""
         Toast.makeText(this, "GALERIA $razaPerro", Toast.LENGTH_LONG).show()
+        val tvraza = findViewById<TextView>(R.id.razaPerro)
+        tvraza.setText(razaPerro.uppercase())
         obtenerListadoRaza(razaPerro)
     }
 

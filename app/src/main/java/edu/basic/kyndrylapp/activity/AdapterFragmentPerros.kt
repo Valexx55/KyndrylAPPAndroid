@@ -24,6 +24,10 @@ class AdapterFragmentPerros (var fragmentActivity: FragmentActivity): FragmentSt
 
         var bundle = Bundle()
         bundle.putString("URL_FOTO", urlFoto)
+        var posicion = position+1;
+        var stringLeyenda = "$posicion de ${this.itemCount}"
+        bundle.putString("TEXTO_LEYENDA", stringLeyenda)
+
 
         fragmentPerro.arguments = bundle
 
