@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             3 -> { objetoClassActivity = BusquedaActivity::class.java }
             4 -> { objetoClassActivity = ProductosActivity::class.java }
             5 -> { objetoClassActivity = PerrosActivity::class.java }
-            6 -> { objetoClassActivity = PerrosActivity::class.java }
+            6 -> { objetoClassActivity = FotoActivity::class.java }
 
         }
         this.startActivity(Intent(this, objetoClassActivity))

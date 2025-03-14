@@ -34,7 +34,7 @@
                 android:title="PERROS" />
             <item
                 android:id="@+id/fotoapp"
-                android:orderInCategory="5"
+                android:orderInCategory="6"
                 android:icon="@drawable/baseline_play_arrow_24"
                 android:title="FOTO" />
         </menu>
