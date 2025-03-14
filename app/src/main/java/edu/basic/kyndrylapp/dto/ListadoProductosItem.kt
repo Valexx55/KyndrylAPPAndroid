@@ -1,4 +1,4 @@
-package edu.basic.kyndrylapp
+package edu.basic.kyndrylapp.dto
 
 data class ListadoProductosItem(
     val id: Int,

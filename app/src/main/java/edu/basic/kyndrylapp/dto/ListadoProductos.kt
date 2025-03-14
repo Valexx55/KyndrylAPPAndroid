@@ -1,3 +1,3 @@
-package edu.basic.kyndrylapp
+package edu.basic.kyndrylapp.dto
 
 class ListadoProductos : ArrayList<ListadoProductosItem>()

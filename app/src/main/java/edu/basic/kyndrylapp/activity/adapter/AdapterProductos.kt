@@ -1,14 +1,13 @@
-package edu.basic.kyndrylapp.activity
+package edu.basic.kyndrylapp.activity.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import edu.basic.kyndrylapp.ListadoProductos
-import edu.basic.kyndrylapp.ListadoProductosItem
-import edu.basic.kyndrylapp.ProductosViewHolder
+import edu.basic.kyndrylapp.dto.ListadoProductos
 import edu.basic.kyndrylapp.R
+import edu.basic.kyndrylapp.activity.ProductosViewHolder
 
-class AdapterProductos (var listaProductos:ListadoProductos) : RecyclerView.Adapter<ProductosViewHolder>() {
+class AdapterProductos (var listaProductos: ListadoProductos) : RecyclerView.Adapter<ProductosViewHolder>() {
 
     //creame una fila
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductosViewHolder {

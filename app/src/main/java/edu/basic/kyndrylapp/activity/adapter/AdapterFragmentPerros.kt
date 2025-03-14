@@ -1,10 +1,11 @@
-package edu.basic.kyndrylapp.activity
+package edu.basic.kyndrylapp.activity.adapter
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import edu.basic.kyndrylapp.ListadoPerros
+import edu.basic.kyndrylapp.activity.FragmentPerro
+import edu.basic.kyndrylapp.dto.ListadoPerros
 
 class AdapterFragmentPerros (var fragmentActivity: FragmentActivity): FragmentStateAdapter(fragmentActivity){
 

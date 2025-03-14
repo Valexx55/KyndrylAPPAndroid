@@ -6,11 +6,8 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import edu.basic.kyndrylapp.Constantes
+import edu.basic.kyndrylapp.util.Constantes
 import edu.basic.kyndrylapp.R
 
 /**
@@ -24,7 +21,7 @@ import edu.basic.kyndrylapp.R
  * Ahora queremos, que cuando acabe la partida, darle la opción de jugar una nueva
  * REINICIAR!
  */
-class Adivina : AppCompatActivity() {
+class AdivinaActivity : AppCompatActivity() {
 
     //var usuario, numero intentos restantes, numero aleatorio
     var numeroIntentos:Int = 5

@@ -1,6 +1,6 @@
-package edu.basic.kyndrylapp.activity
+package edu.basic.kyndrylapp.remote
 
-import edu.basic.kyndrylapp.ListadoPerros
+import edu.basic.kyndrylapp.dto.ListadoPerros
 import retrofit2.http.GET
 import retrofit2.http.Path
 

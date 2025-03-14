@@ -8,12 +8,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import edu.basic.kyndrylapp.Constantes
-import edu.basic.kyndrylapp.ProductoService
+import edu.basic.kyndrylapp.util.Constantes
+import edu.basic.kyndrylapp.remote.ProductoService
 import edu.basic.kyndrylapp.R
+import edu.basic.kyndrylapp.activity.adapter.AdapterProductos
 import edu.basic.kyndrylapp.databinding.ActivityProductosBinding
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit

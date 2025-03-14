@@ -1,4 +1,4 @@
-package edu.basic.kyndrylapp
+package edu.basic.kyndrylapp.util
 
 import android.content.Context
 import android.net.ConnectivityManager

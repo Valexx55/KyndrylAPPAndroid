@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:title="EJERCIICIOS BÁSICOS">
+    <menu>
+        <item
+            android:id="@+id/adivinaapp"
+            android:orderInCategory="1"
+            android:icon="@drawable/baseline_play_arrow_24"
+            android:title="ADIVINA" />
+        <item
+            android:id="@+id/imcapp"
+            android:orderInCategory="2"
+            android:icon="@drawable/baseline_play_arrow_24"
+            android:title="IMC" />
+        <item
+            android:id="@+id/busquedaapp"
+            android:orderInCategory="4"
+            android:icon="@drawable/baseline_play_arrow_24"
+            android:title="Búsqueda" />
+    </menu>
+</item>
+    <item android:title="EJERCIICIOS INTERMEDIOS">
+        <menu>
+
+            <item
+                android:id="@+id/productosapp"
+                android:orderInCategory="4"
+                android:icon="@drawable/baseline_play_arrow_24"
+                android:title="PRODUCTOS" />
+            <item
+                android:id="@+id/galeriapp"
+                android:orderInCategory="5"
+                android:icon="@drawable/baseline_play_arrow_24"
+                android:title="PERROS" />
+            <item
+                android:id="@+id/fotoapp"
+                android:orderInCategory="5"
+                android:icon="@drawable/baseline_play_arrow_24"
+                android:title="FOTO" />
+        </menu>
+    </item>
+</menu>

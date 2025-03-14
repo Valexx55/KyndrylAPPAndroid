@@ -16,9 +16,12 @@
         android:theme="@style/Theme.KyndrylAPP"
         tools:targetApi="31">
         <activity
-            android:name=".activity.ProductosActivity"
-            android:label="Productos Activity"
+            android:name=".activity.FotoActivity"
             android:exported="false" />
+        <activity
+            android:name=".activity.ProductosActivity"
+            android:exported="false"
+            android:label="Productos Activity" />
         <activity
             android:name=".activity.GaleriaPerrosActivity"
             android:exported="false"
@@ -64,11 +67,11 @@
             android:label="Juego Adivina"></activity>
         -->
         <activity
-            android:name=".activity.Adivina"
+            android:name=".activity.AdivinaActivity"
             android:exported="true"
             android:label="@string/label_activity_adivina" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true"
             android:label="Inicio">
             <intent-filter>

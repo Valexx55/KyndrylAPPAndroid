@@ -1,9 +1,11 @@
-package edu.basic.kyndrylapp
+package edu.basic.kyndrylapp.activity
 
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import edu.basic.kyndrylapp.R
+import edu.basic.kyndrylapp.dto.ListadoProductosItem
 
 //esta clase es una estructura que contiene la fila
 //es como un contenedor de la fila

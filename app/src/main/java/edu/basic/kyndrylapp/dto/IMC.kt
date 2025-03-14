@@ -1,4 +1,4 @@
-package edu.basic.kyndrylapp
+package edu.basic.kyndrylapp.dto
 
 class IMC (val peso:Float, val altura:Float) {
 

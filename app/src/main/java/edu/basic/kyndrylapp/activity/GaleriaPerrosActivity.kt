@@ -10,8 +10,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.viewpager2.widget.ViewPager2
-import edu.basic.kyndrylapp.Constantes
+import edu.basic.kyndrylapp.util.Constantes
 import edu.basic.kyndrylapp.R
+import edu.basic.kyndrylapp.activity.adapter.AdapterFragmentPerros
+import edu.basic.kyndrylapp.remote.PerroService
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

@@ -12,9 +12,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import edu.basic.kyndrylapp.Constantes
+import edu.basic.kyndrylapp.util.Constantes
 import edu.basic.kyndrylapp.R
-import edu.basic.kyndrylapp.RedUtil
+import edu.basic.kyndrylapp.util.RedUtil
 import edu.basic.kyndrylapp.databinding.ActivityPerrosBinding
 
 class PerrosActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
